@@ -1,25 +1,71 @@
-/**
- * SYST 17796 Project Base code.
- * Students can modify and extend to implement their game.
- * Add your name as an author and the date!
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ca.sheridancollege.project;
 
 /**
- * A class to be used as the base Card class for the project. Must be general enough to be instantiated for any Card
- * game. Students wishing to add to the code should remember to add themselves as a modifier.
  *
- * @author dancye
+ * @author yeli8
  */
-public abstract class Card {
-    //default modifier for child classes
+public class Card {
+    private Suit suit;
+    private Rank rank;
 
-    /**
-     * Students should implement this method for their specific children classes
-     *
-     * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
-     */
+    public Card(Suit suit, Rank rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+
+    public Suit getSuit() {
+        return suit;
+    }
+
+    public Rank getRank() {
+        return rank;
+    }
+
+    public int getValueOfRank(Rank rank) throws Exception{
+        int value = 0;
+        switch(rank){
+            case TWO: value = 2;
+            break;
+            case THREE: value = 3;
+            break;
+            case FOUR: value = 4;
+            break;
+            case FIVE: value = 5;
+            break;
+            case SIX: value = 6;
+            break;
+            case SEVEN: value = 7;
+            break;
+            case EIGHT: value = 8;
+            break;
+            case NINE: value = 9;
+            break;
+            case TEN: 
+            case JACK:
+            case QUEEN: 
+            case KING: value = 10;
+            break;
+            case ACE: value = 11;
+            break;
+            default: throw new Exception("Illegal rank!");
+        }
+        return value;
+    }
+
     @Override
-    public abstract String toString();
-
+    public String toString() {
+        try {
+            return rank + " of " + suit + ", the value of the card: " + getValueOfRank(rank);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+    
 }
+
+
+
