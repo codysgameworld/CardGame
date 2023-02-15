@@ -1,6 +1,11 @@
 # CardGame
 Black Jack Card Game Project for SYST17796.
 
+Team Wild
+Cody Labelle
+Sarah McCrie
+Ye Li
+
 
 The Objective of Blackjack
 Beat The Dealer. There are some misconceptions about the objective of the game of blackjack but at the simplest level all you are trying to do is beat the dealer.
