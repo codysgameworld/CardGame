@@ -1,7 +1,7 @@
 # CardGame
 Black Jack Card Game Project for SYST17796.
 
-Team Wild
+**Team Wild**
 
 Cody Labelle
 
