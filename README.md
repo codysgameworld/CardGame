@@ -2,8 +2,11 @@
 Black Jack Card Game Project for SYST17796.
 
 Team Wild
+
 Cody Labelle
+
 Sarah McCrie
+
 Ye Li
 
 
