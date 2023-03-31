@@ -5,45 +5,57 @@
  */
 package ca.sheridancollege.project;
 
+import java.util.Scanner;
+
 /**
  * A class that models each Player in the game. Players have an identifier, which should be unique.
  *
  * @author dancye
  * @author Paul Bonenfant Jan 2020
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
-public abstract class Player {
+public class Player extends Person {
 
-    private String name; //the unique name for this player
+    private String name;
+    Scanner scan = new Scanner(System.in);
 
-    /**
-     * A constructor that allows you to set the player's unique ID
-     *
-     * @param name the unique ID to assign to this player.
-     */
-    public Player(String name) {
-        this.name = name;
+    public Player() {
+        super.setName("Player");
     }
-
-    /**
-     * @return the player name
-     */
+    @Override
     public String getName() {
         return name;
     }
-
-    /**
-     * Ensure that the playerID is unique
-     *
-     * @param name the player name to set
-     */
+    
+    
+    @Override
     public void setName(String name) {
         this.name = name;
     }
+    public void hitOrStand(Deck deck) {
 
-    /**
-     * The method to be overridden when you subclass the Player class with your specific type of Player and filled in
-     * with logic to play your game.
-     */
-    public abstract void play();
+        String decision = "";
 
+        do{
+            System.out.println("Would you like to: Hit(enter h) or Stand(enter s)");
+            decision = scan.nextLine();
+        } 
+        while(!decision.toLowerCase().equals("h") && !decision.toLowerCase().equals("s"));
+            
+        if (decision.toLowerCase().equals("h")) {
+            super.hit(deck);
+            if(getHand().calculateValue()>20){
+                return;
+            }
+            else{
+                hitOrStand(deck);
+            }
+        } else {
+            System.out.println("You stand.");
+        }
+    
+
+    }
 }

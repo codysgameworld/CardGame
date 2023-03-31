@@ -10,12 +10,10 @@ package ca.sheridancollege.project;
  * @author Cody Labelle
  * @author Sarah McCrie
  */
-public class Dealer extends Person {
-
-    public Dealer() {
-        super.setName("Dealer");;
-    }
-    public void showFirstHand(){
-        System.out.println("Dealer's Hand:\n " + super.getHand().getCard(0) + "\n <hidden card>\n");
+public class Main {
+    
+    public static void main(String[] args) {
+        Game game = new Game();
+        game.startBlackJack(); 
     }
 }

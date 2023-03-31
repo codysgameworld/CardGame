@@ -6,17 +6,20 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author yeli8
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
 public abstract class Person {
 
     private Hand hand;
     private String name;
- 
-    public Person(String name, Hand hand) {
-        this.hand = hand;
-        this.name = name;
+    
+    public Person() {
+        this.hand = new Hand();
+        this.name = "";
     }
+
     public Hand getHand() {
         return hand;
     }
@@ -30,7 +33,21 @@ public abstract class Person {
         this.name = name;
     }
     public void showHand(){
-        System.out.println(this.name + "'s hand looks like this:");
-        System.out.println(this.hand + " Valued at: ");
+        System.out.println(name + "'s hand:\n" + hand + "Valued at: " + hand.calculateValue());
+    }
+    
+    public void hit(Deck deck){
+        this.hand.takeCardFromDeck(deck);
+        System.out.println(name + " gets a card");
+        showHand();
+    }
+
+    public boolean hasBlackjack(){
+        if(this.getHand().calculateValue() == 21){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

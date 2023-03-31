@@ -6,27 +6,52 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author yeli8
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
 import java.util.ArrayList;
+import java.util.List;
 
-public class Hand extends Card {
-    private ArrayList<Card> hand;
+public class Hand {
+
+    private List<Card> hand;
+
+    public Hand() {
+        hand = new ArrayList<>();
+    }
     
-    public Hand(Suit suit, Rank rank) {
-        super(suit, rank);
+    
+    public void takeCardFromDeck(Deck deck) {
+        hand.add(deck.drawCard());
     }
-    public void takeCardFromDeck(Deck deck){
-
+    
+    public Card getCard(int idx){
+        return hand.get(idx);
     }
-    public void adjustAceValue(){
-
+    
+    public int calculateValue() {
+        int value = 0;
+        int countAce = 0;
+        for(Card card: hand) {
+            value += card.getValueOfRank();
+            if(card.getValueOfRank()==11) {
+                countAce ++;
+            }
+        }
+        if(value > 21 && countAce > 0) {
+            while(countAce > 0 && value > 21) {
+                countAce--;
+                value-= 10;
+            }
+        }
+        return value;
     }
     @Override
     public String toString(){
         String output = "";
         for(Card card: hand){
-            output += card + "/n";
+            output += card + "\n";
         }
         return output;
     }

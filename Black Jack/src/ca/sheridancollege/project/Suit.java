@@ -6,7 +6,9 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author yeli8
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
 public enum Suit {
     CLUB,

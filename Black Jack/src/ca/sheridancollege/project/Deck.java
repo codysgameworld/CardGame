@@ -6,31 +6,50 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author yeli8
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
 import java.util.ArrayList;
-public class Deck extends Card {
-    private ArrayList<Card> deck;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+public class Deck {
+    private List<Card> deck;
     
-    public Deck(Suit suit, Rank rank) {
-        super(suit, rank);
-    }
-    public void createDeck(){
-        this.deck = new ArrayList<>();
+    public List<Card> createDeck() {
+        deck = new ArrayList<>();
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
-                this.deck.add(new Card(suit, rank));
+                Card card = new Card(suit, rank);
+                deck.add(card);
             }
         }
+        return deck;
     }
     public void shuffleDeck(){
+        Collections.shuffle(deck, new Random());
+    }
 
+    public Card drawCard() { //take a card from the deck and put it to hand
+        if(deck.size() <= 0) {
+            System.out.println("There is no more cards in the deck");;
+        }
+        Card cardToTake = new Card(deck.get(0));
+        deck.remove(0);
+        return cardToTake;
     }
-    public Card draw(){ //take a card from the deck and put it to hand
-       return deck.remove(0);
+
+    @Override
+    public String toString(){
+        String output = "";
+
+        for(Card card: deck){
+            output += card;
+            output += "\n";
+        }
+        return output;
     }
-    public int remainingCards(){
-        return deck.size();
-  }
+
 }
 

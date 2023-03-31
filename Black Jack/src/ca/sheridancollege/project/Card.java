@@ -6,15 +6,22 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author yeli8
+ * @author yeli March 2023
+ * @author Cody Labelle
+ * @author Sarah McCrie
  */
 public class Card {
     private Suit suit;
     private Rank rank;
-
-    public Card(Suit suit, Rank rank) {
+    
+    public Card(Suit suit, Rank rank){
         this.suit = suit;
         this.rank = rank;
+    }
+
+    public Card(Card card) {
+        this.suit = card.getSuit();
+        this.rank = card.getRank();
     }
 
     public Suit getSuit() {
@@ -24,48 +31,19 @@ public class Card {
     public Rank getRank() {
         return rank;
     }
-
-    public int getValueOfRank(Rank rank) throws Exception{
-        int value = 0;
-        switch(rank){
-            case TWO: value = 2;
-            break;
-            case THREE: value = 3;
-            break;
-            case FOUR: value = 4;
-            break;
-            case FIVE: value = 5;
-            break;
-            case SIX: value = 6;
-            break;
-            case SEVEN: value = 7;
-            break;
-            case EIGHT: value = 8;
-            break;
-            case NINE: value = 9;
-            break;
-            case TEN: 
-            case JACK:
-            case QUEEN: 
-            case KING: value = 10;
-            break;
-            case ACE: value = 11;
-            break;
-            default: throw new Exception("Illegal rank!");
-        }
-        return value;
+    
+    
+    public int getValueOfRank() {
+        return rank.getValueOfRank();
     }
 
     @Override
     public String toString() {
-        try {
-            return rank + " of " + suit + ", the value of the card: " + getValueOfRank(rank);
-        } catch (Exception e) {
-            return e.getMessage();
-        }
+        return rank + " of " + suit;
     }
-    
 }
+    
+
 
 
 
