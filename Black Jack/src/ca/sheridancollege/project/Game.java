@@ -22,6 +22,19 @@ public class Game {
     private Deck deck = new Deck();
     private Dealer dealer = new Dealer();
     private Player player = new Player();
+    
+    private static Game instance = null;
+
+    private Game() {
+       
+    }
+
+    public static Game getInstance() {
+        if (instance == null) {
+            instance = new Game();
+        }
+        return instance;
+    }
 
     Scanner scan = new Scanner(System.in);
 
