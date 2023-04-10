@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
@@ -12,10 +8,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author sarah
- */
 public class PersonTest {
     
     public PersonTest() {
@@ -43,12 +35,10 @@ public class PersonTest {
     @Test
     public void testHitGood() {
         System.out.println("hit Good Test");
-        Deck deck = null;
+        Deck deck = new Deck();
+        deck.createDeck();
         Person instance = new PersonImpl();
         instance.hit(deck);
-        
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
 
     /**
@@ -69,8 +59,6 @@ public class PersonTest {
         boolean expResult = true;
         boolean result = instance.hasBlackjack();
         assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
 
         @Test
@@ -88,8 +76,6 @@ public class PersonTest {
         boolean expResult = false;
         boolean result = instance.hasBlackjack();
         assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
         @Test
@@ -103,8 +89,6 @@ public class PersonTest {
         boolean expResult = false;
         boolean result = instance.hasBlackjack();
         assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
     public class PersonImpl extends Person {

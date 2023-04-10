@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package ca.sheridancollege.project;
 
 import org.junit.After;
@@ -11,10 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author sarah
- */
+
 public class RankTest {
     
     public RankTest() {
@@ -41,14 +34,20 @@ public class RankTest {
      * Test of getValueOfRank method, of class Rank.
      */
     @Test
-    public void testGetValueOfRankBoundary() {
-        System.out.println("getValueOfRank Boundary Test");
-        Rank instance = null;
-        int expResult = 0;
-        int result = instance.getValueOfRank();
-        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+    public void testGetValueOfRank() {
+        assertEquals(11, Rank.ACE.getValueOfRank());
+        assertEquals(2, Rank.TWO.getValueOfRank());
+        assertEquals(3, Rank.THREE.getValueOfRank());
+        assertEquals(4, Rank.FOUR.getValueOfRank());
+        assertEquals(5, Rank.FIVE.getValueOfRank());
+        assertEquals(6, Rank.SIX.getValueOfRank());
+        assertEquals(7, Rank.SEVEN.getValueOfRank());
+        assertEquals(8, Rank.EIGHT.getValueOfRank());
+        assertEquals(9, Rank.NINE.getValueOfRank());
+        assertEquals(10, Rank.TEN.getValueOfRank());
+        assertEquals(10, Rank.JACK.getValueOfRank());
+        assertEquals(10, Rank.QUEEN.getValueOfRank());
+        assertEquals(10, Rank.KING.getValueOfRank());
     }
     
     @Test
@@ -58,8 +57,6 @@ public class RankTest {
         int expResult = 10;
         int result = instance.getValueOfRank();
         assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
     @Test
@@ -69,8 +66,6 @@ public class RankTest {
         int expResult = 3;
         int result = instance.getValueOfRank();
         assertNotEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
     }
     
     
