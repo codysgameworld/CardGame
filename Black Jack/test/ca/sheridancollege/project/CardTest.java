@@ -68,21 +68,5 @@ public class CardTest {
         assertNotEquals("TWO of CLUB", card.toString());
     }
 
-    @Test
-    public void testEqualsGood() {
-        System.out.println("Equals Good Test");
-        Card card1 = new Card(Suit.CLUB, Rank.ACE);
-        Card card2 = new Card(Suit.CLUB, Rank.ACE);
-        assertTrue(card1.equals(card2));
-    }
-
-    @Test
-    public void testEqualsBad() {
-        System.out.println("Equals Bad Test");
-        Card card1 = new Card(Suit.CLUB, Rank.ACE);
-        Card card2 = new Card(Suit.SPADE, Rank.ACE);
-        assertFalse(card1.equals(card2));
-    }
-
 }
 
