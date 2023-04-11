@@ -35,20 +35,30 @@ public class DeckTest {
      * Test of createDeck method, of class Deck.
      */
     @Test
-    public void testCreateDeck() {
-        System.out.println("createDeck");
+    public void testCreateDeckGood() {
+        System.out.println("createDeck Good Test");
         Deck instance = new Deck();
         int expResult = 52;
         int result = instance.createDeck().size();
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void testCreateDeckBad() {
+        System.out.println("createDeck Bad Test");
+        Deck instance = new Deck();
+        int expResult = 50;
+        int result = instance.createDeck().size();
+        assertNotEquals(expResult, result);
+    }
+
+
     /**
      * Test of shuffleDeck method, of class Deck.
      */
     @Test
-    public void testShuffleDeck() {
-        System.out.println("shuffleDeck");
+    public void testShuffleDeckGood() {
+        System.out.println("shuffleDeck Good Test");
         Deck instance = new Deck();
         instance.createDeck();
         List<Card> originalDeck = new ArrayList<>(instance.deck);
@@ -60,13 +70,23 @@ public class DeckTest {
      * Test of drawCard method, of class Deck.
      */
     @Test
-    public void testDrawCard() {
-        System.out.println("drawCard");
+    public void testDrawCardGood() {
+        System.out.println("drawCard Good Test");
         Deck instance = new Deck();
         instance.createDeck();
         Card expResult = instance.deck.get(0);
         Card result = instance.drawCard();
         assertEquals(expResult, result);
+    }
+
+    @Test
+    public void testDrawCardBad() {
+        System.out.println("drawCard Bad Test");
+        Deck instance = new Deck();
+        instance.createDeck();
+        Card expResult = instance.deck.get(1);
+        Card result = instance.drawCard();
+        assertNotEquals(expResult, result); // the drawn card is not expected to be the same as expResult
     }
 
 }
