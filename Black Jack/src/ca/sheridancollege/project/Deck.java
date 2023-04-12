@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 public class Deck {
-    private List<Card> deck;
+    List<Card> deck;
     
     public List<Card> createDeck() {
         deck = new ArrayList<>();
