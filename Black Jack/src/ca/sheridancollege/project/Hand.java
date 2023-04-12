@@ -55,10 +55,4 @@ public class Hand {
         }
         return output;
     }
-    
-    //for testing purposes
-      public void buildTestHand(ArrayList<Card> cardsToBuild){
-        this.hand = cardsToBuild;
-    }
-  
 }

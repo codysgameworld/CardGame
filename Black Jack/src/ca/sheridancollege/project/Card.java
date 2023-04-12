@@ -41,15 +41,6 @@ public class Card {
     public String toString() {
         return rank + " of " + suit;
     }
-
-    //for test
-    public boolean equals(Object obj) {
-        if (obj instanceof Card) {
-            Card other = (Card) obj;
-            return this.rank == other.rank && this.suit == other.suit;
-        }
-        return false;
-    }
 }
     
 
