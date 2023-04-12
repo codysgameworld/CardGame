@@ -13,7 +13,7 @@ package ca.sheridancollege.project;
 public class Main {
     
     public static void main(String[] args) {
-        Game game = Game.getInstance();
-        game.startBlackJack(); 
+        Game game = BlackJackGame.getInstance();
+        game.play(); 
     }
 }
